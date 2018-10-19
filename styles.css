@@ -1,0 +1,54 @@
+/* reset  */
+body, h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* basic */
+h2 {
+	margin-bottom: .6em;
+}
+
+body {
+	line-height: 1.5em;
+	font-size: 18px;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* styles */
+body {
+	background: url("img/black-and-white-decision-doors-277017.jpg") 50px 0px;
+	color: #ffffff;	
+}
+
+.news {
+	width: 30%;
+	background-color: #270001;
+	padding: 2em;
+	border-radius: 20px;
+}
+
+.news p, .news .photo-card {
+	transform: translateY(-500px);
+	display: none;
+	transition: all .43s ease-in-out;
+}
+
+.photo-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.photo-card img {
+	width: 20%;
+	height: 40%;
+	border-radius: 10px;
+	margin-right: 1em;
+}
