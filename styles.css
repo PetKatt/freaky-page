@@ -14,6 +14,7 @@ h2 {
 }
 
 body {
+	position: relative;
 	line-height: 1.5em;
 	font-size: 18px;
 	width: 100%;
@@ -27,10 +28,27 @@ body {
 	color: #ffffff;	
 }
 
+.news-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	background-color: #ababab;
+	padding: 1.5em;
+	box-shadow: 0 0 2em 1em #232323;
+	box-sizing: border-box;
+}
+
 .news {
-	width: 30%;
+	width: 20%;
 	background-color: #270001;
 	padding: 2em;
+	border-radius: 20px;
+}
+
+.news h2:empty {
+	background-color: #ffffff;
+	height: 1em;
+	width: 50%;
 	border-radius: 20px;
 }
 
@@ -51,4 +69,100 @@ body {
 	height: 40%;
 	border-radius: 10px;
 	margin-right: 1em;
+}
+
+/* screen */
+.screen-left {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background-color: #000000;
+	animation: revealLeft .43s ease-in-out 4.5s;
+	animation-fill-mode: forwards;
+}
+
+.screen-right {
+	position: absolute;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #000000;
+	animation: revealRight .43s ease-in-out 4.5s;
+	animation-fill-mode: forwards;
+
+}
+
+/* loader */
+.loader-container {
+	width: 100%;
+	height: 40%;
+	position: fixed;
+	top: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader {
+	position: relative;
+	width: 12em;
+	height: 12em;
+	border-top: 5px solid #720017;
+	border-radius: 50%;
+	animation: spin 1s linear .3s infinite;
+}
+
+.loader:before {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	content: "";
+	display: block;
+	width: 11em;
+	height: 11em;
+	border-left: 5px solid #D9AD2A;
+	border-radius: 50%;
+	animation: spin 1.5s linear .6s infinite;
+}
+
+.loader:after {
+	position: absolute;
+	top: 18px;
+	left: 17px;
+	content: "";
+	display: block;
+	width: 10em;
+	height: 10em;
+	border-right: 5px solid #D8D584;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+
+/* animations */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes revealLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes revealRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
 }
