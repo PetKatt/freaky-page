@@ -79,3 +79,15 @@ art.forEach(function(node, index) {
 	});
 });
 
+/* background moving */
+function translateBack(e) {
+	console.log(e.pageX, e.pageY);
+	let pageX = -((e.pageX - screen.width / 2) / 5);
+	let pageY = -((e.pageY - screen.height / 2) / 5);
+	document.body.style.backgroundPosition = `${pageX}px ${pageY}px`;
+}
+
+document.body.addEventListener("mousemove", translateBack);
+
+
+

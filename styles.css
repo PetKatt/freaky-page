@@ -25,7 +25,8 @@ body {
 /* styles */
 body {
 	background: url("img/black-and-white-decision-doors-277017.jpg") 50px 0px;
-	color: #ffffff;	
+	color: #ffffff;
+	animation: scaleIn 5s ease-in-out reverse;	
 }
 
 .news-container {
@@ -40,9 +41,11 @@ body {
 
 .news {
 	width: 20%;
-	background-color: #270001;
+	background-color: hsl(358, 100%, 8%);
 	padding: 2em;
 	border-radius: 20px;
+	box-shadow: .2em .2em .5em .2em #565656, -.2em .2em .5em .2em #565656, .2em -.2em .5em .2em #565656, -.2em -.2em .5em .2em #565656;
+	animation: colorfulNews 60s linear infinite alternate;
 }
 
 .news h2:empty {
@@ -50,6 +53,7 @@ body {
 	height: 1em;
 	width: 50%;
 	border-radius: 20px;
+	box-shadow: .2em .2em .5em .2em #aaaaaa, -.2em .2em .5em .2em #aaaaaa, .2em -.2em .5em .2em #aaaaaa, -.2em -.2em .5em .2em #aaaaaa;
 }
 
 .news p, .news .photo-card {
@@ -164,5 +168,50 @@ body {
 	}
 	to {
 		transform: translateX(100%);
+	}
+}
+
+@keyframes colorfulNews {
+	0% {
+		background-color: hsl(358, 100%, 8%);
+	}
+	10% {
+		background-color: hsl(350, 90%, 18%);
+	}
+	20% {
+		background-color: hsl(340, 80%, 28%);
+	}
+	30% {
+		background-color: hsl(330, 70%, 38%);
+	}
+	40% {
+		background-color: hsl(320, 60%, 48%);
+	}
+	50% {
+		background-color: hsl(290, 50%, 58%);
+	}
+	60% {
+		background-color: hsl(260, 40%, 68%);
+	}
+	70% {
+		background-color: hsl(240, 30%, 78%);
+	}
+	80% {
+		background-color: hsl(220, 20%, 88%);
+	}
+	90% {
+		background-color: hsl(200, 10%, 98%);
+	}
+	100% {
+		background-color: #270001;
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(1, 1);
+	}
+	to {
+		transform: scale(1.15, 1.2);
 	}
 }
